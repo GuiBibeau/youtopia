@@ -8,6 +8,7 @@ export async function middleware(req: NextRequest) {
   const res = NextResponse.next();
 
   if (req.nextUrl.pathname.startsWith('/dashboard/token')) {
+    
       const code = req.nextUrl.searchParams.get('code')
       const cookie = req.cookies.get(GOOGLE_COOKIE_NAME)
       

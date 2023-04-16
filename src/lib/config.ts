@@ -54,12 +54,12 @@ const configs: ConfigsMap = {
   },
   preview: {
     apiUrl: "http://localhost:3000/api",
-    environment: "development",
+    environment: "preview",
     url: 'http://localhost:3000'
   },
   production: {
     apiUrl: "https://www.youtopiaai.com/api",
-    environment: "development",
+    environment: "production",
     url: 'https://www.youtopiaai.com'
   },
 };

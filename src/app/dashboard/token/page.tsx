@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import Typewriter from "react-ts-typewriter";
 
 export default async function Page({}) {
-  redirect('/dashboard')
+  // redirect('/dashboard')
   return (
     <div className="flex items-center min-h-[32px]">
       <div className="mr-4 text-lg leading-8 text-gray-300 ">
