@@ -28,8 +28,8 @@ export const getTokensFromGoogle = async (code: string) => {
     const tokens = await tokenRequest.json();
     return tokens;
   } catch (error) {
-    console.log(error);
-    console.error("Error in getTokens:", error);
+    const message = getErrorMessage(error)
+    console.error(message);
     return null;
   }
 };
