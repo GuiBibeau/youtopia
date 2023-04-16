@@ -20,6 +20,8 @@ export const getTokensFromGoogle = async (code: string) => {
       body: data,
     });
 
+    console.log(tokenRequest)
+
 
 
     const tokens = await tokenRequest.json();
