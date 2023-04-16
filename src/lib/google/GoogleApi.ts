@@ -1,7 +1,6 @@
 import { googleOAuthConfig } from "./config";
 import { z } from "zod";
-import { youtubeChannelListResponseSchema } from './types'
-
+import { youtubeChannelListResponseSchema } from "./types";
 
 export class GoogleApi {
   private static accessToken: string | null = null;
@@ -40,16 +39,33 @@ export class GoogleApi {
 
   static async getChannelInfo() {
     const apiUrl =
-      "https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true";
+    "https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true";
 
     try {
       const response = await this.fetch(apiUrl);
       const data = await response.json();
-      return youtubeChannelListResponseSchema.parse(data)
+      return data;
+      return youtubeChannelListResponseSchema.parse(data);
     } catch (error) {
       console.log(error);
       console.error("Failed to fetch channel info:", error);
-      return null
+      return null;
+    }
+  }
+
+  static async GetChannelUploadsFromPlaylist(id: string) {
+    const apiUrl =
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails,status&playlistId=${id}`;
+
+    try {
+      const response = await this.fetch(apiUrl);
+      const data = await response.json();
+      return data;
+      return youtubeChannelListResponseSchema.parse(data);
+    } catch (error) {
+      console.log(error);
+      console.error("Failed to fetch channel info:", error);
+      return null;
     }
   }
 
