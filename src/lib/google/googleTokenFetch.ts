@@ -20,11 +20,7 @@ export const getTokensFromGoogle = async (code: string) => {
       body: data,
     });
 
-    if (!tokenRequest.ok) {
-      throw new Error(
-        `Token request failed with status ${tokenRequest.status}`
-      );
-    }
+
 
     const tokens = await tokenRequest.json();
     return tokens;
