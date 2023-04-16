@@ -60,7 +60,7 @@ const configs: ConfigsMap = {
   production: {
     apiUrl: "https://www.youtopiaai.com/api",
     environment: "development",
-    url: 'https://www.youtopiaai.com/'
+    url: 'https://www.youtopiaai.com'
   },
 };
 
