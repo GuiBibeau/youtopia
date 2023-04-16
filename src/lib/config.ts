@@ -33,17 +33,10 @@ const isEnv = (env: string | undefined): env is Env => {
  * `NODE_ENV` is set and matches one of the allowed values, it is returned. If
  */
 const getEnv = (): Env => {
-  const { NEXT_PUBLIC_VERCEL_ENV, NODE_ENV } = process.env;
-  console.log(process.env)
+  const { ENVIRONMENT } = process.env
 
-  console.log(NEXT_PUBLIC_VERCEL_ENV, NODE_ENV)
-
-  if (isEnv(NEXT_PUBLIC_VERCEL_ENV)) {
-    return NEXT_PUBLIC_VERCEL_ENV;
-  }
-
-  if (isEnv(NODE_ENV)) {
-    return NODE_ENV;
+  if(isEnv(ENVIRONMENT)) {
+    return ENVIRONMENT
   }
 
   return "development";
@@ -56,9 +49,9 @@ const configs: ConfigsMap = {
     url: 'http://localhost:3000'
   },
   preview: {
-    apiUrl: "http://localhost:3000/api",
+    apiUrl: "https://www.preview.youtopiaai.com/api",
     environment: "preview",
-    url: 'http://localhost:3000'
+    url: 'https://www.preview.youtopiaai.com'
   },
   production: {
     apiUrl: "https://www.youtopiaai.com/api",

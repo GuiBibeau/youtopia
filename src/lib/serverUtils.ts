@@ -13,7 +13,6 @@ export async function getAudioBuffer(url: string): Promise<Buffer> {
       // Collect audio data into an array of chunks
       const chunks: Uint8Array[] = [];
       audioStream.on("data", (chunk) => {
-        console.log('chunk')
         chunks.push(chunk);
       });
       
@@ -22,16 +21,12 @@ export async function getAudioBuffer(url: string): Promise<Buffer> {
         const audioBuffer = Buffer.concat(chunks);
         resolve(audioBuffer);
       });
-      console.log('hello 2')
 
       // Handle stream errors
       audioStream.on("error", (error) => {
-        console.log('inside error!!!')
-        console.log(error)
         reject(error);
       });
     } catch (error) {
-      console.log(error)
       reject(error);
     }
   });

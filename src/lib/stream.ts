@@ -21,7 +21,6 @@ export const getTextStreamFromResponse = (res: Response) => {
         if (event.type === "event") {
           const data = event.data;
           if (data === "[DONE]") {
-            console.log("DONE");
             controller.close();
             return;
           }

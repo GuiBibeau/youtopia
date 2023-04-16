@@ -12,7 +12,6 @@ export const getTokensFromGoogle = async (code: string) => {
       grant_type: "authorization_code",
     });
 
-    console.log('pizza', googleOAuthConfig.redirectUrl)
 
     const tokenRequest = await fetch(url, {
       method: "POST",
@@ -22,12 +21,10 @@ export const getTokensFromGoogle = async (code: string) => {
       body: data,
     });
 
-    console.log(tokenRequest)
 
 
 
     const tokens = await tokenRequest.json();
-    console.log(tokens)
     return tokens;
   } catch (error) {
     const message = getErrorMessage(error)

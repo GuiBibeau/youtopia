@@ -18,7 +18,6 @@ export class GoogleApi {
         "Access token not set. Call GoogleApi.setAccessToken() first."
       );
     }
-    console.log(this.accessToken);
 
     const defaultHeaders: HeadersInit = {
       Authorization: `Bearer ${this.accessToken}`,
@@ -70,7 +69,6 @@ export class GoogleApi {
   }
 
   static async getTokensFromGoogle(code: string): Promise<any | null> {
-    console.log("get tokens");
     try {
       const url = "https://oauth2.googleapis.com/token";
       const data = new URLSearchParams({
