@@ -25,6 +25,7 @@ export const getTokensFromGoogle = async (code: string) => {
 
 
     const tokens = await tokenRequest.json();
+    console.log(tokens)
     return tokens;
   } catch (error) {
     const message = getErrorMessage(error)
