@@ -15,7 +15,6 @@ export default async function Page() {
 
   GoogleApi.setAccessToken(access_token);
   const data = await GoogleApi.getChannelInfo();
-  console.log(data)
 
   // if (data) {
   //   const uploadId = data.items[0].contentDetails.relatedPlaylists.uploads
