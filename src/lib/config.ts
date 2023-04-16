@@ -35,6 +35,8 @@ const isEnv = (env: string | undefined): env is Env => {
 const getEnv = (): Env => {
   const { NEXT_PUBLIC_VERCEL_ENV, NODE_ENV } = process.env;
 
+  console.log(NEXT_PUBLIC_VERCEL_ENV, NODE_ENV)
+
   if (isEnv(NEXT_PUBLIC_VERCEL_ENV)) {
     return NEXT_PUBLIC_VERCEL_ENV;
   }
