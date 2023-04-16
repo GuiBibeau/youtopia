@@ -58,9 +58,9 @@ const configs: ConfigsMap = {
     url: 'http://localhost:3000'
   },
   production: {
-    apiUrl: "http://localhost:3000/api",
+    apiUrl: "www.youtopiaai.com/api",
     environment: "development",
-    url: 'http://localhost:3000'
+    url: 'www.youtopiaai.com'
   },
 };
 
